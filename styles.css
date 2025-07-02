@@ -1,0 +1,132 @@
+body {
+    background: linear-gradient(135deg, #2b2e4a, #e84545);
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.2);
+    text-align: center;
+    min-width: 320px;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    color: #2b2e4a;
+    font-size: 2.5rem;
+}
+
+.mode-select {
+    margin-bottom: 1.2rem;
+}
+
+.mode-select button {
+    background: #e84545;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    margin: 0 0.3rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.mode-select button.active, .mode-select button:hover {
+    background: #903749;
+}
+
+.status {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #222;
+    min-height: 1.5em;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+}
+
+.cell {
+    background: #f7f7f7;
+    border: 2px solid #2b2e4a;
+    border-radius: 8px;
+    font-size: 2.2rem;
+    color: #e84545;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.cell:hover {
+    background: #e4e4e4;
+}
+
+#reset-btn {
+    background: #2b2e4a;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#reset-btn:hover {
+    background: #903749;
+}
+
+.win {
+    background: #ffe066 !important;
+    color: #2b2e4a !important;
+    animation: win-pop 0.6s ease;
+    box-shadow: 0 0 16px #ffe066;
+}
+
+@keyframes win-pop {
+    0% { transform: scale(1); }
+    60% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.win-icon {
+    font-size: 1.6em;
+    vertical-align: middle;
+    margin-right: 0.3em;
+}
+
+.status strong {
+    color: #e84545;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 1rem 0.5rem;
+        min-width: unset;
+    }
+    .board {
+        grid-template-columns: repeat(3, 50px);
+        grid-template-rows: repeat(3, 50px);
+        gap: 6px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+} 
